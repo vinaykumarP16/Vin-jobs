@@ -25,7 +25,7 @@ function App() {
     <Jobpage page={page} setPage={setPage} hasNextPage={true}/>
       {loading && <h1>loading</h1> }
       {error && <h1>error try refeshing</h1> }
-      {jobs.map(job=>{
+      {(jobs).map(job=>{
         return <Job key={job.id} job={job}/>
       })}
       <Jobpage page={page} setPage={setPage} hasNextPage={true}/>
