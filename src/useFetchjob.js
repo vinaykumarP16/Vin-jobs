@@ -15,7 +15,7 @@ const base_URL='/positions.json';
 function reducer(state,action){
 	switch(action.type){
 		case ACTIONS.MAKE_REQUEST:
-		return{loading:true,jobs:[]}
+		return{loading:true,jobs:[{}]}
 		case ACTIONS.GET_DATA:
 		return{...state,loading:false,jobs:action.payload.jobs}
 		case ACTIONS.ERROR:
@@ -30,7 +30,7 @@ function reducer(state,action){
 
 	export default function useFetchjob(params,page) {
 		const [state,dispatch]=useReducer
-		(reducer, { jobs:[],loading:true });
+		(reducer, { jobs:[{}],loading:true });
 
 		useEffect(()=>{
 			const cancelToken1=axios.CancelToken.source();
